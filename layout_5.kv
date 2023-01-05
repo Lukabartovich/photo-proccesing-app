@@ -1,0 +1,78 @@
+<Cameras>:
+    GridLayout:
+        cols: 1
+        padding: 10
+        spacing: 10
+
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            play: False
+            opacity: 0
+            size_hint_y: 0.8
+        Button:
+            text: 'start'
+            on_press: root.start()
+            size_hint_y: 0.1
+        Button:
+            text: 'capture'
+            on_press: root.capture()
+            size_hint_y: 0.1
+
+<Change>:
+    GridLayout:
+        cols: 1
+
+        padding: 10
+        spacing: 10
+
+        Image:
+            id: image
+            source: ''
+            size_hint_y: 0.7
+        Button:
+            text: 'gray and white'
+            on_press: root.b_and_w()
+            size_hint_y: 0.1
+        Button:
+            text: 'blur faces'
+            on_press: root.blur()
+            size_hint_y: 0.1
+        Button:
+            text: 'normal'
+            on_press: root.normal()
+            size_hint_y: 0.1
+<Save>:
+    GridLayout:
+        cols: 1
+
+        padding: 10
+        spacing: 10
+
+        Image:
+            id: image2
+            source: ''
+            size_hint_y: 0.9
+        Button:
+            text: 'back'
+            on_press: root.back()
+            size_hint_y: 0.1
+<Root>:
+    canvas.before:
+        Color:
+            rgba: (0.53, 0.33, 0.54, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Cameras:
+        id: cameras
+        name: 'cameras'
+
+    Change:
+        id: change
+        name: 'change'
+
+    Save:
+        id: save
+        name: 'save'
